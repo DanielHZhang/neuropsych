@@ -39,7 +39,12 @@ function updateTimer() {
         inGame = false;
         clearInterval(timer);
         //alert("You tapped: " + counter + " times!");
-        bootbox.alert("You tapped: " + counter + " times!");
+        bootbox.alert({ 
+          size: "small",
+          title: "Score",
+          message: "You tapped: " + counter + " times!"
+        });
+        //bootbox.alert("You tapped: " + counter + " times!");
         timeRemaining = 10;
         elapsedTime=0;
         reset();
