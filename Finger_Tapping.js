@@ -38,7 +38,8 @@ function updateTimer() {
     if ((timeRemaining-(elapsedTime / 1000)).toFixed(2) <0) {
         inGame = false;
         clearInterval(timer);
-        alert("You tapped: " + counter + " times!");
+        //alert("You tapped: " + counter + " times!");
+        bootbox.alert("You tapped: " + counter + " times!");
         timeRemaining = 10;
         elapsedTime=0;
         reset();
