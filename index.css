@@ -4,6 +4,7 @@ body {
 
 .thumbnail img {
     width: 100%;
+
 }
 
 .thumbnail {
@@ -21,4 +22,13 @@ body {
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+}
+
+#cap1, #cap2 {
+    display: inline-block;
+
+}
+
+#cap1:hover, #cap2:hover {
+    display: inline-block;
 }
