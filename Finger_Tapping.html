@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Grooved Test</title>
+    <title>Finger Tapping Test</title>
 
     <link rel="stylesheet" href="bootstrap.css" type="text/css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -17,7 +17,9 @@
             integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
             crossorigin="anonymous">
     </script>
+    <link rel="stylesheet" href="Finger_Tapping.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+
 </head>
 <body>
 <nav class="navbar navbar-default">
@@ -36,13 +38,35 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="Finger_Tapping.html">Finger Tapping Test</a></li>
-                <li class="active"><a href="Grooved_Pegboard.html">Grooved Pegboard Test<span class="sr-only">(current)</span></a></li>
+                <li><a href="index.html">Home </a></li>
+                <li class="active"><a href="Finger_Tapping.html">Finger Tapping Test<span class="sr-only">(current)</span></a></li>
+                <li><a href="Grooved_Pegboard.html">Grooved Pegboard Test </a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
-<h1>Groove Test</h1>
+
+
+<div class="container" id="game">
+    <div class="row">
+        <div class="col-sm-12">
+            <p id="timer">10 seconds</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <button class="btn btn-lg btn-default btn-circle" onclick="addToCounter()" id="display">Click me</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="btn btn-lg btn-default" onclick="reset()" id="reset">Reset</div>
+        </div>
+    </div>
+
+</div>
+
+<script src="Finger_Tapping.js" type="text/javascript"></script>
+
 </body>
 </html>

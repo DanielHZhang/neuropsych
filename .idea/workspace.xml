@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c1c99413-519e-4f00-85ed-ed04b3cc758a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Grooved_Pegboard.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Grooved_Pegboard.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Finger_Tapping.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Finger_Tapping.css" afterPath="$PROJECT_DIR$/Finger_Tapping.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Grooved_Pegboard.html" afterPath="$PROJECT_DIR$/Grooved_Pegboard.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -21,11 +20,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
+      <file leaf-file-name="Finger_Tapping.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Finger_Tapping.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="686">
+              <caret line="34" column="38" lean-forward="true" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="5" column="26" lean-forward="true" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+            <state relative-caret-position="527">
+              <caret line="15" column="20" lean-forward="true" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -34,8 +43,8 @@
       <file leaf-file-name="Grooved_Pegboard.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Grooved_Pegboard.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+            <state relative-caret-position="196">
+              <caret line="4" column="34" lean-forward="true" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -51,7 +60,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Finger_Tapping.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Finger_Tapping.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Finger_Tapping.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="49">
@@ -99,12 +108,12 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Main.html" />
-        <option value="$PROJECT_DIR$/Finger_Tapping.html" />
         <option value="$PROJECT_DIR$/Finger_Tapping.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/Grooved_Pegboard.js" />
-        <option value="$PROJECT_DIR$/Grooved_Pegboard.html" />
         <option value="$PROJECT_DIR$/Finger_Tapping.css" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/Grooved_Pegboard.html" />
+        <option value="$PROJECT_DIR$/Finger_Tapping.html" />
       </list>
     </option>
   </component>
@@ -173,10 +182,13 @@
     </option>
   </component>
   <component name="RunManager" selected="JavaScript Debug.index.html">
-    <configuration default="false" name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Neuropsych/index.html">
+    <configuration default="false" name="Finger_Tapping.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Neuropsych/Finger_Tapping.html">
       <method />
     </configuration>
     <configuration default="false" name="Finger_Tapping.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="Finger_Tapping.js" working-dir="$PROJECT_DIR$">
+      <method />
+    </configuration>
+    <configuration default="false" name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Neuropsych/index.html">
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -245,14 +257,16 @@
       <recursive>false</recursive>
       <method />
     </configuration>
-    <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
+    <list size="3">
+      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.Finger_Tapping.html" />
       <item index="1" class="java.lang.String" itemvalue="Node.js.Finger_Tapping.js" />
+      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
     </list>
     <recent_temporary>
-      <list size="2">
+      <list size="3">
         <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
-        <item index="1" class="java.lang.String" itemvalue="Node.js.Finger_Tapping.js" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.Finger_Tapping.html" />
+        <item index="2" class="java.lang.String" itemvalue="Node.js.Finger_Tapping.js" />
       </list>
     </recent_temporary>
   </component>
@@ -267,12 +281,12 @@
       <option name="presentableId" value="Default" />
       <updated>1500685981699</updated>
       <workItem from="1500685983415" duration="6706000" />
-      <workItem from="1500693078424" duration="10812000" />
+      <workItem from="1500693078424" duration="11785000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17518000" />
+    <option name="totallyTimeSpent" value="18491000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-16" y="-16" width="3872" height="2092" extended-state="6" />
@@ -307,7 +321,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/Finger_Tapping.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -354,26 +368,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Finger_Tapping.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="49">
+          <caret line="1" column="41" lean-forward="false" selection-start-line="1" selection-start-column="41" selection-end-line="1" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="5" column="26" lean-forward="true" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+        <state relative-caret-position="527">
+          <caret line="15" column="20" lean-forward="true" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Grooved_Pegboard.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state relative-caret-position="196">
+          <caret line="4" column="34" lean-forward="true" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Finger_Tapping.css">
+    <entry file="file://$PROJECT_DIR$/Finger_Tapping.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="49">
-          <caret line="1" column="41" lean-forward="false" selection-start-line="1" selection-start-column="41" selection-end-line="1" selection-end-column="41" />
+        <state relative-caret-position="686">
+          <caret line="34" column="38" lean-forward="true" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
           <folding />
         </state>
       </provider>
