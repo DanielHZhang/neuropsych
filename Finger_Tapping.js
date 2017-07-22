@@ -33,28 +33,37 @@ function addToCounter() {
 function updateTimer() {
     if (inGame) {
         elapsedTime = Date.now() - startTime;
+        updateText('timer', (timeRemaining-(elapsedTime / 1000)).toFixed(2) + " seconds");
     }
+ 
 
+    
     if ((timeRemaining-(elapsedTime / 1000)).toFixed(2) <0) {
         inGame = false;
         clearInterval(timer);
-        //alert("You tapped: " + counter + " times!");
         bootbox.alert({ 
           size: "small",
           title: "Score",
-          message: "You tapped: " + counter + " times!"
+          message: "You tapped: " + counter + " times!",
+          callback: function(){
+
+            reset();
+          }
         });
-        //bootbox.alert("You tapped: " + counter + " times!");
+        updateText('timer', "0.00 seconds");
         timeRemaining = 10;
         elapsedTime=0;
-        reset();
-    }
-    updateText('timer', (timeRemaining-(elapsedTime / 1000)).toFixed(2) + " seconds");
+    } 
+   
 }
 
 function reset() {
     counter = 0;
     updateText("display", "Click me");
+
+    if(!inGame){
+        updateText('timer', "10 seconds");
+    }
 
     if (inGame) {
         clearInterval(interval);
