@@ -12,7 +12,7 @@ function updateText(target, text) {
 function addToCounter() {
     if (!inGame) {
         inGame = true;
-        timer = setInterval(updateTimer, 1000);
+        timer = setInterval(updateTimer, 909.09);
     }
     counter++;
     updateText("display", counter);
@@ -35,7 +35,7 @@ function updateTimer() {
 
 function reset() {
     counter = 0;
-    updateText("display", counter);
+    updateText("display", "Click me");
 
     if (inGame) {
         clearInterval(timer);
