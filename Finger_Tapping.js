@@ -23,7 +23,7 @@ function addToCounter() {
     if (!inGame) {
         inGame = true;
         startTime = Date.now();
-        interval = setInterval(updateTimer, 20);
+        interval = setInterval(updateTimer, 40);
         //timer = setInterval(updateTimer, 909.09);
     }
     counter++;
@@ -35,8 +35,6 @@ function updateTimer() {
         elapsedTime = Date.now() - startTime;
         updateText('timer', (timeRemaining-(elapsedTime / 1000)).toFixed(2) + " seconds");
     }
- 
-
     
     if ((timeRemaining-(elapsedTime / 1000)).toFixed(2) <0) {
         inGame = false;
@@ -53,6 +51,8 @@ function updateTimer() {
         updateText('timer', "0.00 seconds");
         timeRemaining = 10;
         elapsedTime=0;
+    } else if((timeRemaining-(elapsedTime / 1000)).toFixed(2) < 2){
+        document.getElementById("timer").style.color = "#e23e1d";
     } 
    
 }
@@ -60,7 +60,7 @@ function updateTimer() {
 function reset() {
     counter = 0;
     updateText("display", "Click me");
-
+    document.getElementById("timer").style.color = "#000000";
     if(!inGame){
         updateText('timer', "10 seconds");
     }
