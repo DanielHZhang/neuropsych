@@ -3,6 +3,7 @@ var target=document.getElementById("target");
 var deg=0;
 var currentAngle=0;
 var currentPeg=0;
+var startTime;
 
 /**
  * Returns a random integer between min (inclusive) and max (inclusive)
@@ -97,6 +98,20 @@ function checkAnswer(){
 }
 
 function startGame(){
+    startTime = Date.now();
     images[currentPeg].style.background="yellow";
+    var interval = setInterval(function() {
+        var elapsedTime = Date.now() - startTime;
+        document.getElementById("time").innerHTML = (elapsedTime / 1000).toFixed(0);
+    }, 1000);
 
 }
+
+/*var startTime = Date.now();
+
+ var interval = setInterval(function() {
+ var elapsedTime = Date.now() - startTime;
+ document.getElementById("timer").innerHTML = (timeRemaining-(elapsedTime / 1000)).toFixed(2);
+ }, 20);
+
+ */

@@ -27,7 +27,7 @@ function addToCounter() {
 function updateTimer() {
     if (inGame) {
         elapsedTime = Date.now() - startTime;
-        updateText('timer', (timeRemaining - (elapsedTime / 1000)).toFixed(0) + " seconds");
+        updateText('timer', (timeRemaining - (elapsedTime / 1000)).toFixed(2) + " seconds");
     }
     if ((timeRemaining - (elapsedTime / 1000)).toFixed(2) < 0) {
         inGame = false;
