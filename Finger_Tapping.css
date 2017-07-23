@@ -65,3 +65,11 @@ body {
     font-size: 3.5em;
 }
 
+div.r1 {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+

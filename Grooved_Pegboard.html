@@ -24,20 +24,6 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
     <link rel="stylesheet" href="Grooved_Pegboard.css" type="text/css">
 
-    <style>
-  
-  #target {
-    font-family: "Helvetica Neue", sans-serif;
-    font-weight: 100;
-    font-size: 150px;
-    color: #777;
-    -webkit-font-smoothing: antialiased;
-  }
-  #target:hover {
-    color: orange;
-    cursor: pointer;
-  }
-</style>
 </head>
 <body>
 <nav class="navbar navbar-default">
@@ -77,16 +63,15 @@
     </div>
     <div class="row">
         <div class="col-sm-12">
-
-            <img id="target" src="peghole.png" class="peghole" alt="">
-
-            <div class="draggable_wp">
-                <div class="el"></div>
-                <div class="handle"></div>
-            </div>
-
+            <button id="Left" onclick="rotateLeft()"><----</button>
+            <img id="target" src="peghole.png" alt="">
+            <button id="Right" onclick="rotateRight()">----></button>
         </div>
-
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <button id="done" onclick="checkAnswer()">Check</button>
+        </div>
     </div>
 
     <div class="row">

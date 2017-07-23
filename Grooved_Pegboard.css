@@ -16,23 +16,10 @@
     height:80px;
 }
 
+#target {
+    /*border: 1px solid black;*/
+    padding: 15px;
+    width: 80px;
+    height:80px;
+}
 
-
-.draggable_wp {
-    position: absolute;
-    left: 150px;
-    top: 150px;
-}
-.el {
-    width: 25px;
-    height: 50px;
-    background-color: yellow;
-}
-.handle {
-    position: absolute;
-    left:0;
-    top:-75;
-    width: 25px;
-    height: 25px;
-    background-color: blue;
-}
