@@ -21,9 +21,23 @@
             integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
             crossorigin="anonymous">
     </script>
-    <script src="Grooved_Pegboard.js" type="text/javascript"></script>
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
     <link rel="stylesheet" href="Grooved_Pegboard.css" type="text/css">
+
+    <style>
+  
+  #target {
+    font-family: "Helvetica Neue", sans-serif;
+    font-weight: 100;
+    font-size: 150px;
+    color: #777;
+    -webkit-font-smoothing: antialiased;
+  }
+  #target:hover {
+    color: orange;
+    cursor: pointer;
+  }
+</style>
 </head>
 <body>
 <nav class="navbar navbar-default">
@@ -64,7 +78,7 @@
     <div class="row">
         <div class="col-sm-12">
 
-            <!--<img id="dxy" src="peghole.png" class="peghole" alt="">-->
+            <img id="target" src="peghole.png" class="peghole" alt="">
 
             <div class="draggable_wp">
                 <div class="el"></div>
@@ -116,10 +130,10 @@
                         <td><img src="peghole.png" class="peghole" alt=""></td>
                     </tr>
                 </table>
-            </div>
+            </div>  
         </div>
     </div>
 </div>
-
+<script src="Grooved_Pegboard.js" type="text/javascript"></script>
 </body>
 </html>

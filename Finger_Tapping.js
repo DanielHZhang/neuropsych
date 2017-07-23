@@ -1,5 +1,5 @@
 var counter = 0;
-var timeRemaining = 10;
+var timeRemaining = 10.00;
 var inGame = false;
 var timer;
 var startTime;
@@ -10,7 +10,7 @@ function updateText(target, text) {
     if (text.toString().indexOf("-") === -1) {
         document.getElementById(target).innerHTML = text.toString();
     } else {
-        document.getElementById(target).innerHTML = "0.00 seconds"
+        document.getElementById(target).innerHTML = "0.00 seconds";
     }
 }
 
