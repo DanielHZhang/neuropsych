@@ -195,10 +195,10 @@ function checkAnswer() {
 
     function move(event) {
         var d, x, y;
-
+        event.preventDefault();
+        event.stopPropagation();
 
         if (event.type === "mousemove") { //event is a MouseEvent
-            event.preventDefault();
             x = event.pageX - center.x;
             y = event.pageY - center.y;
         } else { //event is a TouchEvent

@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c1c99413-519e-4f00-85ed-ed04b3cc758a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Finger_Tapping.html" afterPath="$PROJECT_DIR$/Finger_Tapping.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Grooved_Pegboard.css" afterPath="$PROJECT_DIR$/Grooved_Pegboard.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Grooved_Pegboard.html" afterPath="$PROJECT_DIR$/Grooved_Pegboard.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Grooved_Pegboard.js" afterPath="$PROJECT_DIR$/Grooved_Pegboard.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -65,8 +60,8 @@
       <file leaf-file-name="Grooved_Pegboard.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Grooved_Pegboard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="177" column="29" lean-forward="false" selection-start-line="177" selection-start-column="29" selection-end-line="177" selection-end-column="29" />
+            <state relative-caret-position="960">
+              <caret line="199" column="0" lean-forward="true" selection-start-line="199" selection-start-column="0" selection-end-line="199" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -310,12 +305,12 @@
       <workItem from="1500685983415" duration="6706000" />
       <workItem from="1500693078424" duration="15983000" />
       <workItem from="1500754618902" duration="14441000" />
-      <workItem from="1500913481219" duration="6205000" />
+      <workItem from="1500913481219" duration="6988000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71944000" />
+    <option name="totallyTimeSpent" value="72727000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-16" y="-16" width="3872" height="2092" extended-state="6" />
@@ -741,8 +736,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Grooved_Pegboard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="177" column="29" lean-forward="false" selection-start-line="177" selection-start-column="29" selection-end-line="177" selection-end-column="29" />
+        <state relative-caret-position="960">
+          <caret line="199" column="0" lean-forward="true" selection-start-line="199" selection-start-column="0" selection-end-line="199" selection-end-column="0" />
           <folding />
         </state>
       </provider>
