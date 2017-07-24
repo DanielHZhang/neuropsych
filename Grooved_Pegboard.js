@@ -9,16 +9,16 @@ var inGame = false;
 var interval;
 var board = [];
 
-$.mobile.loading().hide();
+// $.mobile.loading().hide();
 
-window.onload = function () {
-    $.vmouse.moveDistanceThreshold = 1000;
-};
-
-$('html, body').css({
-    overflow: 'hidden',
-    height: '100%'
-});
+// window.onload = function () {
+//     $.vmouse.moveDistanceThreshold = 1000;
+// };
+//
+// $('html, body').css({
+//     overflow: 'hidden',
+//     height: '100%'
+// });
 
 startGame();
 
@@ -73,27 +73,6 @@ function stopTimer() {
     document.getElementById("time").innerHTML = "0";
 }
 
-// function rotateLeft() {
-//     deg -= 45;
-//     if (deg < 0) {
-//         deg += 360;
-//     }
-//     console.log(deg);
-//     target.style.transform = "rotate(" + deg + "deg)";
-//     setCurrentAngle();
-//     startGame();
-// }
-// function rotateRight() {
-//     deg += 45;
-//     if (deg >= 360) {
-//         deg -= 360;
-//     }
-//     console.log(deg);
-//     target.style.transform = "rotate(" + deg + "deg)";
-//     setCurrentAngle();
-//     startGame();
-// }
-
 function setCurrentAngle(deg) {
     if (deg > 35 && deg < 55) {
         currentAngle = 1;
@@ -141,8 +120,7 @@ function checkAnswer() {
     }
 }
 
-
-$(function () {
+(function () {
     var R2D, active, center, rotate, rotation, startAngle;
 
     R2D = 180 / Math.PI;
@@ -152,17 +130,40 @@ $(function () {
     startAngle = 0;
     center = {x: 0, y: 0};
 
-    $(document).on("vmousedown", "#target", function (event) {
-        var height, left, top, width, x, y, _ref;
-        if (event.which === 1) {
-            event.preventDefault();
-        }
+
+    target.addEventListener("mousedown", start, false);
+    target.addEventListener("mousemove", move, false);
+    target.addEventListener("mouseup", finish, false);
+
+    target.addEventListener("touchstart", start, false);
+    // target.addEventListener("touchstart", function (event) {
+    //     // stop touch event
+    //     event.stopPropagation();
+    //     event.preventDefault();
+    //
+    //     // translate to mouse event
+    //    // var clkEvt = document.createEvent('MouseEvent');
+    //     var clkEvt = new MouseEvent('mousemove', true, true, window, event.detail,
+    //         event.touches[0].screenX, event.touches[0].screenY,
+    //         event.touches[0].clientX, event.touches[0].clientY,
+    //         false, false, false, false,
+    //         0, null);
+    //     target.dispatchEvent(clkEvt);
+    //     or just handle touch event
+    //     myMoveHandler(e);
+    // }, false);
+    target.addEventListener("touchmove", move, false);
+    target.addEventListener("touchend", finish, false);
+
+
+    function start (event) {
         if (!inGame) {
             startTimer();
             images[currentPeg].setAttribute("src", "yellow.png");
         }
         event.stopPropagation();
 
+        var height, left, top, width, x, y, _ref;
         _ref = this.getBoundingClientRect();
         top = _ref.top;
         left = _ref.left;
@@ -173,27 +174,50 @@ $(function () {
             y: top + (height / 2)
         };
 
-        x = event.pageX - center.x;
-        y = event.pageY - center.y;
+
+        if (event.which === 1) { //event is a MouseEvent
+            event.preventDefault();
+            x = event.pageX - center.x;
+            y = event.pageY - center.y;
+        } else { //event is a TouchEvent
+            var touches = event.changedTouches;
+            x = touches[0].pageX - center.x;
+            y = touches[0].pageY - center.y;
+            console.log(x);
+            console.log(y);
+        }
+
 
         startAngle = R2D * Math.atan2(y, x);
 
         return active = true;
-    });
+    }
 
-    $(document).on("vmousemove", "#target", function (event) {
+    function move(event) {
         var d, x, y;
-        x = event.pageX - center.x;
-        y = event.pageY - center.y;
+
+
+        if (event.type === "mousemove") { //event is a MouseEvent
+            event.preventDefault();
+            x = event.pageX - center.x;
+            y = event.pageY - center.y;
+        } else { //event is a TouchEvent
+            var touches = event.changedTouches;
+            x = touches[0].pageX - center.x;
+            y = touches[0].pageY - center.y;
+        }
+
+
         d = R2D * Math.atan2(y, x);
         rotation = d - startAngle;
 
         if (active) {
             return this.style.webkitTransform = "rotate(" + (angle + rotation) + "deg)";
         }
-    });
+        rotation = 0;
+    }
 
-    $(document).on("vmouseup", "#target", function () {
+    function finish() {
 
         angle = angle + rotation;
         if (angle >= 360) {
@@ -207,9 +231,83 @@ $(function () {
         console.log("Angle: " + angle + " Rotation: " + rotation);
 
         return active = false;
-    });
+    }
 
-});
+
+}).call();
+
+//
+// $(function () {
+//     var R2D, active, center, rotate, rotation, startAngle;
+//
+//     R2D = 180 / Math.PI;
+//     active = false;
+//     angle = 0;
+//     rotation = 0;
+//     startAngle = 0;
+//     center = {x: 0, y: 0};
+//
+//     $(document).on("vmousedown", "#target", function (event) {
+//         var height, left, top, width, x, y, _ref;
+//         if (event.which === 1) {
+//             event.preventDefault();
+//         }
+//         if (!inGame) {
+//             startTimer();
+//             images[currentPeg].setAttribute("src", "yellow.png");
+//         }
+//         event.stopPropagation();
+//
+//         _ref = this.getBoundingClientRect();
+//         top = _ref.top;
+//         left = _ref.left;
+//         width = _ref.width;
+//         height = _ref.height;
+//         center = {
+//             x: left + (width / 2),
+//             y: top + (height / 2)
+//         };
+//
+//         x = event.pageX - center.x;
+//         y = event.pageY - center.y;
+//
+//         startAngle = R2D * Math.atan2(y, x);
+//
+//         return active = true;
+//     });
+//
+//     $(document).on("vmousemove", "#target", function (event) {
+//         var d, x, y;
+//         event.preventDefault();
+//         x = event.pageX - center.x;
+//         y = event.pageY - center.y;
+//         d = R2D * Math.atan2(y, x);
+//         rotation = d - startAngle;
+//
+//         if (active) {
+//             return this.style.webkitTransform = "rotate(" + (angle + rotation) + "deg)";
+//         }
+//     });
+//
+//     $(document).on("vmouseup", "#target", function () {
+//
+//         angle = angle + rotation;
+//         if (angle >= 360) {
+//             angle -= 360;
+//         } else if (angle < 0) {
+//             angle += 360;
+//         }
+//
+//
+//         attemptDegree = angle;
+//         console.log("Angle: " + angle + " Rotation: " + rotation);
+//
+//         return active = false;
+//     });
+//
+// });
+
+
 
 // function check() {
 //     if (attemptDegree > 250) { //convert to value between -110 and 0
