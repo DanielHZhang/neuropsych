@@ -189,7 +189,7 @@ function checkAnswer() {
             console.log(y);
         }
 
-
+        rotation=0;
         startAngle = R2D * Math.atan2(y, x);
 
         return active = true;
@@ -197,26 +197,36 @@ function checkAnswer() {
 
     function move(event) {
         var d, x, y;
-         rotation=0;
+
+
         event.preventDefault();
         event.stopPropagation();
 
         if (event.type === "mousemove") { //event is a MouseEvent
             x = event.pageX - center.x;
             y = event.pageY - center.y;
+            console.log("MouseX: " + event.pageX + " MouseY: " + event.pageY)
         } else { //event is a TouchEvent
             var touches = event.changedTouches;
             x = touches[0].pageX - center.x;
             y = touches[0].pageY - center.y;
+            console.log("TouchX: " + touches[0].pageX + " TouchY: " +touches[0].pageY)
         }
 
 
         d = R2D * Math.atan2(y, x);
-        rotation = d - startAngle;
+        // if(d + 5 > startAngle && d - 5 < startAngle) {
+        //     rotation=0;
+        // } else {
+            rotation = d - startAngle;
+        // }
+
+        // console.log("d: " + d + " startAngle: " + startAngle + " rotation: " + rotation);
 
         if (active) {
             return this.style.webkitTransform = "rotate(" + (angle + rotation) + "deg)";
         }
+
         
     }
 
@@ -231,7 +241,7 @@ function checkAnswer() {
 
 
         attemptDegree = angle;
-        console.log("Angle:!! " + angle + " Rotation: " + rotation);
+        // console.log("Angle:!! " + angle + " Rotation: " + rotation);
         var test = document.getElementById("test").innerHTML = "Angle: " + angle + " Rotation: " + rotation;
         return active = false;
         

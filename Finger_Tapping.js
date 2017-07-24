@@ -7,29 +7,34 @@ var interval;
 var elapsedTime;
 
 function updateText(target, text) {
-    if (text.toString().indexOf("-") === -1) {
+    // if (text.toString().indexOf("-") === -1) {
         document.getElementById(target).innerHTML = text.toString();
-    } else {
-        document.getElementById(target).innerHTML = "0.00 seconds";
-    }
+    // } else {
+    //     document.getElementById(target).innerHTML = "0.00 seconds";
+    // }
 }
 
 function addToCounter() {
     if (!inGame) {
         inGame = true;
         startTime = Date.now();
-        interval = setInterval(updateTimer, 40);
+        interval = setInterval(updateTimer, 100);
     }
-    counter++;
+    console.log(counter);
+    counter += 1;
     updateText("display", counter);
 }
 
 function updateTimer() {
+    var time = (timeRemaining - (elapsedTime / 1000)).toFixed(0);
+
     if (inGame) {
         elapsedTime = Date.now() - startTime;
-        updateText('timer', (timeRemaining - (elapsedTime / 1000)).toFixed(2) + " seconds");
+        updateText('timer', time + " seconds");
     }
-    if ((timeRemaining - (elapsedTime / 1000)).toFixed(2) < 0) {
+    if (time <= 2) {
+        document.getElementById("timer").style.color = "#e23e1d";
+    } else if (time < 0) {
         inGame = false;
         clearInterval(timer);
         bootbox.alert({
@@ -43,8 +48,6 @@ function updateTimer() {
         updateText('timer', "0.00 seconds");
         timeRemaining = 10;
         elapsedTime = 0;
-    } else if ((timeRemaining - (elapsedTime / 1000)).toFixed(2) <= 2) {
-        document.getElementById("timer").style.color = "#e23e1d";
     }
 }
 
