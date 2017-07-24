@@ -207,7 +207,7 @@ function checkAnswer() {
             y = touches[0].pageY - center.y;
         }
 
-        console.log("lol");
+        
         d = R2D * Math.atan2(y, x);
         rotation = d - startAngle;
 
