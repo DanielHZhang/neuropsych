@@ -8,6 +8,7 @@ var startTime;
 var inGame = false;
 var interval;
 var board = [];
+var rotation;
 
 // $.mobile.loading().hide();
 
@@ -121,7 +122,7 @@ function checkAnswer() {
 }
 
 (function () {
-    var R2D, active, center, rotate, rotation, startAngle;
+    var R2D, active, center, rotate, startAngle;
 
     R2D = 180 / Math.PI;
     active = false;
@@ -161,6 +162,7 @@ function checkAnswer() {
             startTimer();
             images[currentPeg].setAttribute("src", "yellow.png");
         }
+
         event.stopPropagation();
 
         var height, left, top, width, x, y, _ref;
@@ -195,6 +197,7 @@ function checkAnswer() {
 
     function move(event) {
         var d, x, y;
+         rotation=0;
         event.preventDefault();
         event.stopPropagation();
 
@@ -231,7 +234,7 @@ function checkAnswer() {
         console.log("Angle:!! " + angle + " Rotation: " + rotation);
         var test = document.getElementById("test").innerHTML = "Angle: " + angle + " Rotation: " + rotation;
         return active = false;
-        rotation = 0;
+        
     }
 
 
