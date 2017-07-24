@@ -1,16 +1,18 @@
 var images = document.getElementsByClassName("peghole");
 var target = document.getElementById("target");
-var deg = 0;
 var currentAngle = 0;
 var currentPeg = 0;
+var attemptDegree = 0;
+var angle;
 var startTime;
+var inGame = false;
+var interval;
+var board = [];
 
 $.mobile.loading().hide();
 
-
-window.onload = function() {
+window.onload = function () {
     $.vmouse.moveDistanceThreshold = 1000;
-    console.log("ran");
 };
 
 $('html, body').css({
@@ -18,6 +20,7 @@ $('html, body').css({
     height: '100%'
 });
 
+startGame();
 
 /**
  * Returns a random integer between min (inclusive) and max (inclusive)
@@ -27,103 +30,120 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-var board = [];
-for (var i = 0; i < 25; i++) {
-    board.push(getRandomInt(1, 8));
-}
+function startGame() {
+    board.length = 0;
 
-for (var j = 0; j < images.length; j++) {
-    if (board[j] === 2) {
-        images[j].style.transform = "rotate(45deg)";
-    } else if (board[j] === 3) {
-        images[j].style.transform = "rotate(90deg)";
-    } else if (board[j] === 4) {
-        images[j].style.transform = "rotate(135deg)";
-    } else if (board[j] === 5) {
-        images[j].style.transform = "rotate(180deg)";
-    } else if (board[j] === 6) {
-        images[j].style.transform = "rotate(225deg)";
-    } else if (board[j] === 7) {
-        images[j].style.transform = "rotate(270deg)";
-    } else if (board[j] === 8) {
-        images[j].style.transform = "rotate(315deg)";
+    for (var i = 0; i < 25; i++) {
+        board.push(getRandomInt(1, 8));
+        console.log(board[i]);
+    }
+
+    for (var j = 0; j < images.length; j++) {
+        if (board[j] === 1) {
+            images[j].style.transform = "rotate(45deg)";
+        } else if (board[j] === 2) {
+            images[j].style.transform = "rotate(90deg)";
+        } else if (board[j] === 3) {
+            images[j].style.transform = "rotate(135deg)";
+        } else if (board[j] === 4) {
+            images[j].style.transform = "rotate(180deg)";
+        } else if (board[j] === 5) {
+            images[j].style.transform = "rotate(225deg)";
+        } else if (board[j] === 6) {
+            images[j].style.transform = "rotate(270deg)";
+        } else if (board[j] === 7) {
+            images[j].style.transform = "rotate(315deg)";
+        }
     }
 }
 
-function rotateLeft() {
-    deg -= 45;
-    if (deg < 0) {
-        deg += 360;
-    }
-    console.log(deg);
-    target.style.transform = "rotate(" + deg + "deg)";
-    setCurrentAngle();
-    startGame();
+
+function startTimer() {
+    inGame = true;
+    startTime = Date.now();
+    interval = setInterval(function () {
+        var elapsedTime = Date.now() - startTime;
+        document.getElementById("time").innerHTML = (elapsedTime / 1000).toFixed(0);
+    }, 1000);
+
 }
-function rotateRight() {
-    deg += 45;
-    if (deg >= 360) {
-        deg -= 360;
-    }
-    console.log(deg);
-    target.style.transform = "rotate(" + deg + "deg)";
-    setCurrentAngle();
-    startGame();
+function stopTimer() {
+    inGame = false;
+    clearInterval(interval);
+    document.getElementById("time").innerHTML = "0";
 }
 
-function setCurrentAngle() {
-    if (deg === 0) {
+// function rotateLeft() {
+//     deg -= 45;
+//     if (deg < 0) {
+//         deg += 360;
+//     }
+//     console.log(deg);
+//     target.style.transform = "rotate(" + deg + "deg)";
+//     setCurrentAngle();
+//     startGame();
+// }
+// function rotateRight() {
+//     deg += 45;
+//     if (deg >= 360) {
+//         deg -= 360;
+//     }
+//     console.log(deg);
+//     target.style.transform = "rotate(" + deg + "deg)";
+//     setCurrentAngle();
+//     startGame();
+// }
+
+function setCurrentAngle(deg) {
+    if (deg > 35 && deg < 55) {
         currentAngle = 1;
-    } else if (deg === 45) {
+    } else if (deg > 80 && deg < 100) {
         currentAngle = 2;
-    } else if (deg === 90) {
+    } else if (deg > 125 && deg < 145) {
         currentAngle = 3;
-    } else if (deg === 135) {
+    } else if (deg > 170 && deg < 190) {
         currentAngle = 4;
-    } else if (deg === 180) {
+    } else if (deg > 215 && deg < 235) {
         currentAngle = 5;
-    } else if (deg === 225) {
+    } else if (deg > 260 && deg < 280) {
         currentAngle = 6;
-    } else if (deg === 270) {
+    } else if (deg > 305 && deg < 325) {
         currentAngle = 7;
-    } else if (deg === 315) {
+    } else if (deg > 350 || deg < 10) {
         currentAngle = 8;
     }
+
     console.log("Current Angle: " + currentAngle);
 }
 
 function checkAnswer() {
+    setCurrentAngle(angle);
     if (currentAngle === board[currentPeg]) {
-        images[currentPeg].style.background = "green";
+        images[currentPeg].setAttribute("src", "green.png");
         currentPeg += 1;
+        var randAngle = getRandomInt(0, 360);
+        target.style.transform = "rotate(" + randAngle + "deg)";
+        angle = randAngle;
         if (currentPeg <= 24) {
-            images[currentPeg].style.background = "yellow";
+            images[currentPeg].setAttribute("src", "yellow.png");
         } else {
+            stopTimer();
             alert("You won!");
             for (var i = 0; i < images.length; i++) {
-                images[i].style.background = "white";
+                images[i].setAttribute("src", "peghole.png");
             }
             currentPeg = 0;
+            location.reload();
         }
 
     } else {
-        images[currentPeg].style.background = "red";
+        images[currentPeg].setAttribute("src", "red.png");
     }
 }
 
 
-function startGame() {
-    startTime = Date.now();
-    images[currentPeg].style.background = "yellow";
-    var interval = setInterval(function () {
-        var elapsedTime = Date.now() - startTime;
-        document.getElementById("time").innerHTML = (elapsedTime / 1000).toFixed(0);
-    }, 1000);
-}
-
-
 $(function () {
-    var R2D, active, angle, center, rotate, rotation, startAngle;
+    var R2D, active, center, rotate, rotation, startAngle;
 
     R2D = 180 / Math.PI;
     active = false;
@@ -136,6 +156,10 @@ $(function () {
         var height, left, top, width, x, y, _ref;
         if (event.which === 1) {
             event.preventDefault();
+        }
+        if (!inGame) {
+            startTimer();
+            images[currentPeg].setAttribute("src", "yellow.png");
         }
         event.stopPropagation();
 
@@ -170,11 +194,63 @@ $(function () {
     });
 
     $(document).on("vmouseup", "#target", function () {
-        angle += rotation;
+
+        angle = angle + rotation;
+        if (angle >= 360) {
+            angle -= 360;
+        } else if (angle < 0) {
+            angle += 360;
+        }
+
+
+        attemptDegree = angle;
+        console.log("Angle: " + angle + " Rotation: " + rotation);
+
         return active = false;
     });
 
 });
+
+// function check() {
+//     if (attemptDegree > 250) { //convert to value between -110 and 0
+//         attemptDegree -= 360;
+//     }
+//     var lowerBound = board[currentPeg] * 45 - 10;
+//     var upperBound = board[currentPeg] * 45 + 10;
+//
+//     console.log("Attempt: " + attemptDegree + " Actual: " + board[currentPeg] * 45);
+//     if (attemptDegree > lowerBound && attemptDegree < upperBound) {
+//         console.log("U GOT IT RIGHT!");
+//
+//         //target.style.transform = "rotate(0deg)";
+//         images[currentPeg].style.background = "green";
+//         //images[currentPeg].setAttribute("src","green.jpg");
+//         currentPeg++;
+//         target.style.transform = "rotate("+ getRandomInt(0, 360)+"deg)";
+//         this.style.webkitTransform = "rotate(" + getRandomInt(0, 360) + "deg)";
+//
+//         if (currentPeg <= 24) {
+//             images[currentPeg].style.background = "yellow";///////
+//         } else {
+//             alert("You won!");
+//             for (var i = 0; i < images.length; i++) {
+//                 images[i].setAttribute("src", "peghole.png");
+//             }
+//             currentPeg = 0;
+//         }
+//     }
+//
+//
+// }
+
+/*var startTime = Date.now();
+
+ var interval = setInterval(function() {
+ var elapsedTime = Date.now() - startTime;
+ document.getElementById("timer").innerHTML = (timeRemaining-(elapsedTime / 1000)).toFixed(2);
+ }, 20);
+
+ */
 
 
 // window.onload = function () {
