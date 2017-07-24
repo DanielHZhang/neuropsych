@@ -207,7 +207,7 @@ function checkAnswer() {
             y = touches[0].pageY - center.y;
         }
 
-        
+
         d = R2D * Math.atan2(y, x);
         rotation = d - startAngle;
 
@@ -229,7 +229,7 @@ function checkAnswer() {
 
         attemptDegree = angle;
         console.log("Angle: " + angle + " Rotation: " + rotation);
-
+        var test = document.getElementById("test").innerHTML = "Angle: " + angle + " Rotation: " + rotation;
         return active = false;
     }
 
