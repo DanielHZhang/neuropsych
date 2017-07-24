@@ -214,7 +214,7 @@ function checkAnswer() {
         if (active) {
             return this.style.webkitTransform = "rotate(" + (angle + rotation) + "deg)";
         }
-        rotation = 0;
+        
     }
 
     function finish() {
@@ -228,9 +228,10 @@ function checkAnswer() {
 
 
         attemptDegree = angle;
-        console.log("Angle: " + angle + " Rotation: " + rotation);
+        console.log("Angle:!! " + angle + " Rotation: " + rotation);
         var test = document.getElementById("test").innerHTML = "Angle: " + angle + " Rotation: " + rotation;
         return active = false;
+        rotation = 0;
     }
 
 
