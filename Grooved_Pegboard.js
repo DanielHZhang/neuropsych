@@ -9,10 +9,14 @@ $.mobile.loading().hide();
 
 
 window.onload = function() {
-    $.vmouse.moveDistanceThreshold = "100px";
+    $.vmouse.moveDistanceThreshold = 1000;
     console.log("ran");
 };
 
+$('html, body').css({
+    overflow: 'hidden',
+    height: '100%'
+});
 
 
 /**

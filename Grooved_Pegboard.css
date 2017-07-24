@@ -1,28 +1,26 @@
-
 .container{
     text-align:center;
-}
-
-#pegBorder {
-    border: 1px solid black;
-    display: inline-block;
-}
-
-
-.peghole {
-    /*border: 1px solid black;*/
-    padding: 15px;
-    width: 80px;
-    height:80px;
-}
-
-#target {
-    /*border: 1px solid black;*/
-    padding: 15px;
-    width: 80px;
-    height:80px;
 }
 
 #pegboard {
     width:100%;
 }
+
+#border {
+    border: 1px solid black;
+    display: inline-block;
+}
+
+.peghole {
+    padding: 1.5%;
+    width: 60px;
+    height: 60px;
+}
+
+#target {
+    padding: 15px;
+    width: 140px;
+    height:140px;
+}
+
+
