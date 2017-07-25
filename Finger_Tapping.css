@@ -26,7 +26,9 @@ body {
     padding: 10px 16px;
     border-radius: 250px;
     font-size: 4.5em;
-    box-shadow: 0 3px rgba(0, 0, 0, 0.7);
+    /*box-shadow: 0 3px rgba(0, 0, 0, 0.7);*/
+    margin-top: 20px;
+    margin-bottom: 10px;
 
     background: rgba(255, 255, 255, 1);
     background: -moz-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 1) 0%, rgba(242, 242, 242, 1) 48%, rgba(204, 204, 204, 1) 100%);
@@ -36,6 +38,10 @@ body {
     background: -ms-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 1) 0%, rgba(242, 242, 242, 1) 48%, rgba(204, 204, 204, 1) 100%);
     background: radial-gradient(ellipse at center, rgba(255, 255, 255, 1) 0%, rgba(242, 242, 242, 1) 48%, rgba(204, 204, 204, 1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#cccccc', GradientType=1);
+
+    -webkit-box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.75);
 }
 
 #counterButton:active {
@@ -61,11 +67,16 @@ body {
     background: -ms-radial-gradient(center, ellipse cover, rgba(209, 46, 20, 1) 0%, rgba(171, 34, 19, 1) 51%, rgba(110, 15, 9, 1) 100%);
     background: radial-gradient(ellipse at center, rgba(209, 46, 20, 1) 0%, rgba(171, 34, 19, 1) 51%, rgba(110, 15, 9, 1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d12e14', endColorstr='#6e0f09', GradientType=1);
+
+    -webkit-box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.75);
+
 }
 
 #reset:active {
     background-color: #3e8e41;
-    box-shadow: 0 1px #666;
+    /*box-shadow: 0 1px #666;*/
     transform: translateY(2px);
 }
 
@@ -78,8 +89,22 @@ body {
 }
 
 #timer {
+    width: 300px;
     color: white;
-    font-size: 3.5em;
-    margin: 0;
+    font-size: 3.2em;
+    -webkit-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.75);
+    /*display:inline;*/
+    padding:5px 10px 5px 10px;
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
 }
+
+#top {
+    /*text-align: center;*/
+
+}
+
 

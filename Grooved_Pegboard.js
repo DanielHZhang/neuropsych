@@ -48,7 +48,7 @@ function startTimer() {
     interval = setInterval(function () {
         var elapsedTime = Date.now() - startTime;
         currentTime = (elapsedTime / 1000).toFixed(0);
-        document.getElementById("time").innerHTML = "Time elapsed: " + currentTime + " seconds";
+        document.getElementById("time").innerHTML = "Time elapsed: " + currentTime + "s";
     }, 1000);
 }
 
