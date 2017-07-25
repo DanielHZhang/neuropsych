@@ -1,10 +1,57 @@
+html {
+    height: 100%;
+}
+
 body {
     font-family: 'Quicksand', sans-serif;
+
+    background-color: #1e1e1e;
+
+
+    /*background: rgba(245,245,245,1);*/
+    /*background: -moz-linear-gradient(top, rgba(245,245,245,1) 0%, rgba(235,235,235,1) 50%, rgba(227,227,227,1) 100%);*/
+    /*background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(245,245,245,1)), color-stop(50%, rgba(235,235,235,1)), color-stop(100%, rgba(227,227,227,1)));*/
+    /*background: -webkit-linear-gradient(top, rgba(245,245,245,1) 0%, rgba(235,235,235,1) 50%, rgba(227,227,227,1) 100%);*/
+    /*background: -o-linear-gradient(top, rgba(245,245,245,1) 0%, rgba(235,235,235,1) 50%, rgba(227,227,227,1) 100%);*/
+    /*background: -ms-linear-gradient(top, rgba(245,245,245,1) 0%, rgba(235,235,235,1) 50%, rgba(227,227,227,1) 100%);*/
+    /*background: linear-gradient(to bottom, rgba(245,245,245,1) 0%, rgba(235,235,235,1) 50%, rgba(227,227,227,1) 100%);*/
+    /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f5f5', endColorstr='#e3e3e3', GradientType=0 );*/
+
+    /*background: rgba(83, 84, 82, 1);*/
+    /*background: -moz-linear-gradient(top, rgba(83, 84, 82, 1) 0%, rgba(47, 48, 51, 1) 51%, rgba(0, 0, 0, 1) 100%);*/
+    /*background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(83, 84, 82, 1)), color-stop(51%, rgba(47, 48, 51, 1)), color-stop(100%, rgba(0, 0, 0, 1)));*/
+    /*background: -webkit-linear-gradient(top, rgba(83, 84, 82, 1) 0%, rgba(47, 48, 51, 1) 51%, rgba(0, 0, 0, 1) 100%);*/
+    /*background: -o-linear-gradient(top, rgba(83, 84, 82, 1) 0%, rgba(47, 48, 51, 1) 51%, rgba(0, 0, 0, 1) 100%);*/
+    /*background: -ms-linear-gradient(top, rgba(83, 84, 82, 1) 0%, rgba(47, 48, 51, 1) 51%, rgba(0, 0, 0, 1) 100%);*/
+    /*background: linear-gradient(to bottom, rgba(83, 84, 82, 1) 0%, rgba(47, 48, 51, 1) 51%, rgba(0, 0, 0, 1) 100%);*/
+    /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#535452', endColorstr='#000000', GradientType=0);*/
+
+
+    /*background: rgba(214,214,214,1);*/
+    /*background: -moz-linear-gradient(top, rgba(214,214,214,1) 0%, rgba(128,128,128,1) 50%, rgba(0,0,0,1) 100%);*/
+    /*background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(214,214,214,1)), color-stop(50%, rgba(128,128,128,1)), color-stop(100%, rgba(0,0,0,1)));*/
+    /*background: -webkit-linear-gradient(top, rgba(214,214,214,1) 0%, rgba(128,128,128,1) 50%, rgba(0,0,0,1) 100%);*/
+    /*background: -o-linear-gradient(top, rgba(214,214,214,1) 0%, rgba(128,128,128,1) 50%, rgba(0,0,0,1) 100%);*/
+    /*background: -ms-linear-gradient(top, rgba(214,214,214,1) 0%, rgba(128,128,128,1) 50%, rgba(0,0,0,1) 100%);*/
+    /*background: linear-gradient(to bottom, rgba(214,214,214,1) 0%, rgba(128,128,128,1) 50%, rgba(0,0,0,1) 100%);*/
+    /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6d6d6', endColorstr='#000000', GradientType=0 );*/
+
+
+    /*background-size: cover;*/
+    /*background-repeat: no-repeat;*/
+    /*background-position: center center;*/
 }
 
 #time {
     font-size: 2em;
-    margin: 0;
+    margin-bottom:0px;
+    color: white;
+    -webkit-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.75);
+    display:inline;
+    padding:10px;
+
 }
 
 .container{
@@ -16,8 +63,22 @@ body {
 }
 
 #border {
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     display: inline-block;
+    background-color: white;
+    padding: 10px;
+    margin-top: 5px;
+
+    border-radius: 40px 40px 40px 40px;
+    -moz-border-radius: 40px 40px 40px 40px;
+    -webkit-border-radius: 40px 40px 40px 40px;
+    border: 2px solid black;
+
+    -webkit-box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.75);
+
+
 }
 
 .peghole {
@@ -30,6 +91,9 @@ body {
     padding: 15px;
     width: 140px;
     height:140px;
+    margin-top:5px;
+    margin-bottom:5px;
+
 }
 
 #touchableArea {
@@ -39,4 +103,15 @@ body {
 
 #done {
     margin-left: 15px;
+    background-color: #f0f0f0;
+
+    -webkit-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.75);
+
+}
+
+#done:focus {
+    outline: 0;
+
 }
