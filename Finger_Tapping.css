@@ -76,6 +76,7 @@ body {
 #timer {
     color: white;
     font-size: 3.5em;
+    margin: 0;
 }
 
 div.r1 {

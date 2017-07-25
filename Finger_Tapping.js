@@ -21,7 +21,7 @@ function addToCounter() {
         interval = setInterval(updateTimer, 40);
     }
     counter++;
-    updateText("display", counter);
+    updateText("counterButton", counter);
 }
 
 function updateTimer() {
@@ -37,21 +37,22 @@ function updateTimer() {
             title: "Score",
             message: "You tapped: " + counter + " times!",
             callback: function () {
-                reset();
+                location.reload();
             }
         });
         updateText('timer', "0.00 seconds");
         timeRemaining = 10;
         elapsedTime = 0;
-    } else if ((timeRemaining - (elapsedTime / 1000)).toFixed(2) <= 2) {
-        document.getElementById("timer").style.color = "#e23e1d";
     }
+    // else if ((timeRemaining - (elapsedTime / 1000)).toFixed(2) <= 2) {
+    //     document.getElementById("timer").style.color = "#e23e1d";
+    // }
 }
 
 function reset() {
     counter = 0;
-    updateText("display", "Click me");
-    document.getElementById("timer").style.color = "#000000";
+    updateText("counterButton", "Click me");
+    // document.getElementById("timer").style.color = "#000000";
     if (!inGame) {
         updateText('timer', "10 seconds");
     }
