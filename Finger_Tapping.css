@@ -102,9 +102,8 @@ body {
     display:block;
 }
 
-#top {
-    /*text-align: center;*/
-
+#nav {
+    margin: 0;
 }
 
 

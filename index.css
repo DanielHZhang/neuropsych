@@ -1,16 +1,24 @@
+html {
+    height: 100%;
+}
+
 body {
     text-align: center;
     font-family: 'Quicksand', sans-serif;
+
+    background-color: #1e1e1e;
 }
 
 .thumbnail img {
     width: 100%;
-
 }
 
 .thumbnail {
     padding: 0;
     border: 1px solid black;
+
+    /*width: 400px;*/
+    /*height: 350px;*/
 }
 
 .flex {
@@ -33,3 +41,12 @@ body {
 #cap1:hover, #cap2:hover {
     display: inline-block;
 }
+
+h1 {
+    color: white;
+}
+
+/*#lol {*/
+    /*width: 100px;*/
+    /*height: 100px;*/
+/*}*/
