@@ -34,9 +34,11 @@ body {
 }
 
 #counterButton:active {
-    background-color: #3e8e41;
-    box-shadow: 0 1px #666;
-    transform: translateY(2px);
+    /*box-shadow: 0 3px #666;*/
+    transform: translateY(3px);
+    border: none;
+    box-shadow: 0 0 20px 10px rgba(255,255,255,0.2);
+
 }
 
 #counterButton, #reset:focus {
@@ -69,21 +71,13 @@ body {
     text-align: center;
 }
 
-#counterButton, #reset, #timer {
-    margin: 2%;
+#reset {
+    margin: 1.5%;
 }
 
 #timer {
     color: white;
     font-size: 3.5em;
     margin: 0;
-}
-
-div.r1 {
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
 }
 
