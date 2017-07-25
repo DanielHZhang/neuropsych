@@ -9,6 +9,7 @@ var inGame = false;
 var interval;
 var board = [];
 var rotation;
+var currentTime;
 
 // $.mobile.loading().hide();
 
@@ -64,14 +65,15 @@ function startTimer() {
     startTime = Date.now();
     interval = setInterval(function () {
         var elapsedTime = Date.now() - startTime;
-        document.getElementById("time").innerHTML = (elapsedTime / 1000).toFixed(0);
+        currentTime = (elapsedTime / 1000).toFixed(0);
+        document.getElementById("time").innerHTML = "Time elapsed: " + currentTime + " seconds";
     }, 1000);
 
 }
 function stopTimer() {
     inGame = false;
     clearInterval(interval);
-    document.getElementById("time").innerHTML = "0";
+    document.getElementById("time").innerHTML = "Complete!";
 }
 
 function setCurrentAngle(deg) {
@@ -108,12 +110,15 @@ function checkAnswer() {
             images[currentPeg].setAttribute("src", "yellow.png");
         } else {
             stopTimer();
-            alert("You won!");
-            for (var i = 0; i < images.length; i++) {
-                images[i].setAttribute("src", "peghole.png");
-            }
-            currentPeg = 0;
-            location.reload();
+            bootbox.alert({
+                size: "small",
+                title: "Congratulations!",
+                message: "It took you " + currentTime + " seconds to complete the test!",
+                callback: function () {
+                    location.reload();
+                }
+            });
+
         }
 
     } else {
@@ -131,37 +136,20 @@ function checkAnswer() {
     startAngle = 0;
     center = {x: 0, y: 0};
 
-
     target.addEventListener("mousedown", start, false);
     target.addEventListener("mousemove", move, false);
     target.addEventListener("mouseup", finish, false);
 
     target.addEventListener("touchstart", start, false);
-    // target.addEventListener("touchstart", function (event) {
-    //     // stop touch event
-    //     event.stopPropagation();
-    //     event.preventDefault();
-    //
-    //     // translate to mouse event
-    //    // var clkEvt = document.createEvent('MouseEvent');
-    //     var clkEvt = new MouseEvent('mousemove', true, true, window, event.detail,
-    //         event.touches[0].screenX, event.touches[0].screenY,
-    //         event.touches[0].clientX, event.touches[0].clientY,
-    //         false, false, false, false,
-    //         0, null);
-    //     target.dispatchEvent(clkEvt);
-    //     or just handle touch event
-    //     myMoveHandler(e);
-    // }, false);
     target.addEventListener("touchmove", move, false);
     target.addEventListener("touchend", finish, false);
 
 
-    function start (event) {
+    function start(event) {
         if (!inGame) {
             startTimer();
-            images[currentPeg].setAttribute("src", "yellow.png");
         }
+        images[currentPeg].setAttribute("src", "yellow.png");
 
         event.stopPropagation();
 
@@ -189,7 +177,7 @@ function checkAnswer() {
             console.log(y);
         }
 
-        rotation=0;
+        rotation = 0;
         startAngle = R2D * Math.atan2(y, x);
 
         return active = true;
@@ -210,7 +198,7 @@ function checkAnswer() {
             var touches = event.changedTouches;
             x = touches[0].pageX - center.x;
             y = touches[0].pageY - center.y;
-            console.log("TouchX: " + touches[0].pageX + " TouchY: " +touches[0].pageY)
+            console.log("TouchX: " + touches[0].pageX + " TouchY: " + touches[0].pageY)
         }
 
 
@@ -218,7 +206,7 @@ function checkAnswer() {
         // if(d + 5 > startAngle && d - 5 < startAngle) {
         //     rotation=0;
         // } else {
-            rotation = d - startAngle;
+        rotation = d - startAngle;
         // }
 
         // console.log("d: " + d + " startAngle: " + startAngle + " rotation: " + rotation);
@@ -227,7 +215,7 @@ function checkAnswer() {
             return this.style.webkitTransform = "rotate(" + (angle + rotation) + "deg)";
         }
 
-        
+
     }
 
     function finish() {
@@ -242,9 +230,9 @@ function checkAnswer() {
 
         attemptDegree = angle;
         // console.log("Angle:!! " + angle + " Rotation: " + rotation);
-        var test = document.getElementById("test").innerHTML = "Angle: " + angle + " Rotation: " + rotation;
+        // var test = document.getElementById("test").innerHTML = "Angle: " + angle + " Rotation: " + rotation;
         return active = false;
-        
+
     }
 
 
@@ -320,7 +308,6 @@ function checkAnswer() {
 //     });
 //
 // });
-
 
 
 // function check() {
