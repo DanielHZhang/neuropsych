@@ -1,3 +1,12 @@
+body {
+    font-family: 'Quicksand', sans-serif;
+}
+
+#time {
+    font-size: 2em;
+    margin: 0;
+}
+
 .container{
     text-align:center;
 }
@@ -26,4 +35,8 @@
 #touchableArea {
     display: inline-block;
     touch-action: none;
+}
+
+#done {
+    margin-left: 15px;
 }

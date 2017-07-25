@@ -10,9 +10,7 @@ var board = [];
 var rotation;
 var currentTime;
 
-
 startGame();
-
 
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -52,7 +50,6 @@ function startTimer() {
         currentTime = (elapsedTime / 1000).toFixed(0);
         document.getElementById("time").innerHTML = "Time elapsed: " + currentTime + " seconds";
     }, 1000);
-
 }
 
 function setCurrentAngle(deg) {

@@ -64,11 +64,3 @@ function reset() {
         updateText('timer', timeRemaining + " seconds");
     }
 }
-
-
-/*var startTime = Date.now();
- var interval = setInterval(function() {
- var elapsedTime = Date.now() - startTime;
- document.getElementById("timer").innerHTML = (timeRemaining-(elapsedTime / 1000)).toFixed(2);
- }, 20);
- */
