@@ -1,8 +1,20 @@
-body {
-    font-family: 'Quicksand', sans-serif;
+html {
+    height: 100%;
 }
 
-#display {
+body {
+    font-family: 'Quicksand', sans-serif;
+    background: rgba(83,84,82,1);
+    background: -moz-linear-gradient(top, rgba(83,84,82,1) 0%, rgba(47,48,51,1) 51%, rgba(0,0,0,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(83,84,82,1)), color-stop(51%, rgba(47,48,51,1)), color-stop(100%, rgba(0,0,0,1)));
+    background: -webkit-linear-gradient(top, rgba(83,84,82,1) 0%, rgba(47,48,51,1) 51%, rgba(0,0,0,1) 100%);
+    background: -o-linear-gradient(top, rgba(83,84,82,1) 0%, rgba(47,48,51,1) 51%, rgba(0,0,0,1) 100%);
+    background: -ms-linear-gradient(top, rgba(83,84,82,1) 0%, rgba(47,48,51,1) 51%, rgba(0,0,0,1) 100%);
+    background: linear-gradient(to bottom, rgba(83,84,82,1) 0%, rgba(47,48,51,1) 51%, rgba(0,0,0,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#535452', endColorstr='#000000', GradientType=0 );
+}
+
+#counterButton {
     border: none;
     width: 300px;
     height: 300px;
@@ -11,40 +23,40 @@ body {
     font-size: 4.5em;
     box-shadow: 0 3px rgba(0, 0, 0, 0.7);
 
-    background: rgba(147, 206, 222, 1);
-    background: -moz-linear-gradient(left, rgba(147, 206, 222, 1) 0%, rgba(117, 189, 209, 1) 41%, rgba(73, 165, 191, 1) 100%);
-    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(147, 206, 222, 1)), color-stop(41%, rgba(117, 189, 209, 1)), color-stop(100%, rgba(73, 165, 191, 1)));
-    background: -webkit-linear-gradient(left, rgba(147, 206, 222, 1) 0%, rgba(117, 189, 209, 1) 41%, rgba(73, 165, 191, 1) 100%);
-    background: -o-linear-gradient(left, rgba(147, 206, 222, 1) 0%, rgba(117, 189, 209, 1) 41%, rgba(73, 165, 191, 1) 100%);
-    background: -ms-linear-gradient(left, rgba(147, 206, 222, 1) 0%, rgba(117, 189, 209, 1) 41%, rgba(73, 165, 191, 1) 100%);
-    background: linear-gradient(to right, rgba(147, 206, 222, 1) 0%, rgba(117, 189, 209, 1) 41%, rgba(73, 165, 191, 1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#93cede', endColorstr='#49a5bf', GradientType=1);
+    background: rgba(255,255,255,1);
+    background: -moz-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(242,242,242,1) 48%, rgba(204,204,204,1) 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(255,255,255,1)), color-stop(48%, rgba(242,242,242,1)), color-stop(100%, rgba(204,204,204,1)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(242,242,242,1) 48%, rgba(204,204,204,1) 100%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(242,242,242,1) 48%, rgba(204,204,204,1) 100%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(242,242,242,1) 48%, rgba(204,204,204,1) 100%);
+    background: radial-gradient(ellipse at center, rgba(255,255,255,1) 0%, rgba(242,242,242,1) 48%, rgba(204,204,204,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#cccccc', GradientType=1 );
 }
 
-#display:active {
+#counterButton:active {
     background-color: #3e8e41;
     box-shadow: 0 1px #666;
     transform: translateY(2px);
 }
 
-#display, #reset:focus {
+#counterButton, #reset:focus {
     outline: 0;
 }
 
 #reset {
     border: none;
     width: 300px;
-    box-shadow: 0 2px rgba(0, 0, 0, 0.5);
     font-size: 2em;
+    color: white;
 
-    background: rgba(201, 65, 44, 1);
-    background: -moz-linear-gradient(left, rgba(201, 65, 44, 1) 0%, rgba(224, 58, 36, 1) 0%, rgba(219, 27, 13, 1) 100%);
-    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(201, 65, 44, 1)), color-stop(0%, rgba(224, 58, 36, 1)), color-stop(100%, rgba(219, 27, 13, 1)));
-    background: -webkit-linear-gradient(left, rgba(201, 65, 44, 1) 0%, rgba(224, 58, 36, 1) 0%, rgba(219, 27, 13, 1) 100%);
-    background: -o-linear-gradient(left, rgba(201, 65, 44, 1) 0%, rgba(224, 58, 36, 1) 0%, rgba(219, 27, 13, 1) 100%);
-    background: -ms-linear-gradient(left, rgba(201, 65, 44, 1) 0%, rgba(224, 58, 36, 1) 0%, rgba(219, 27, 13, 1) 100%);
-    background: linear-gradient(to right, rgba(201, 65, 44, 1) 0%, rgba(224, 58, 36, 1) 0%, rgba(219, 27, 13, 1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c9412c', endColorstr='#db1b0d', GradientType=1);
+    background: rgba(209,46,20,1);
+    background: -moz-radial-gradient(center, ellipse cover, rgba(209,46,20,1) 0%, rgba(171,34,19,1) 51%, rgba(110,15,9,1) 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(209,46,20,1)), color-stop(51%, rgba(171,34,19,1)), color-stop(100%, rgba(110,15,9,1)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(209,46,20,1) 0%, rgba(171,34,19,1) 51%, rgba(110,15,9,1) 100%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(209,46,20,1) 0%, rgba(171,34,19,1) 51%, rgba(110,15,9,1) 100%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(209,46,20,1) 0%, rgba(171,34,19,1) 51%, rgba(110,15,9,1) 100%);
+    background: radial-gradient(ellipse at center, rgba(209,46,20,1) 0%, rgba(171,34,19,1) 51%, rgba(110,15,9,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d12e14', endColorstr='#6e0f09', GradientType=1 );
 }
 
 #reset:active {
@@ -57,11 +69,12 @@ body {
     text-align: center;
 }
 
-#display, #reset, #timer {
+#counterButton, #reset, #timer {
     margin: 2%;
 }
 
 #timer {
+    color: white;
     font-size: 3.5em;
 }
 
