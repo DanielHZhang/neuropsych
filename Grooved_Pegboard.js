@@ -79,7 +79,6 @@ function checkAnswer() {
         images[currentPeg].setAttribute("src", "green.png");
         currentPeg += 1;
         var randAngle = getRandomInt(0, 360);
-        target.style.transition="all 0.3s";
         target.style.transform = "rotate(" + randAngle + "deg)";
         
 
@@ -141,7 +140,6 @@ function checkAnswer() {
         }
         images[currentPeg].setAttribute("src", "yellow.png");
         event.stopPropagation();
-        target.style.transition="";
 
         var height, left, top, width, x, y, _ref;
         _ref = this.getBoundingClientRect();
