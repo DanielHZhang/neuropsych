@@ -74,11 +74,15 @@ function setCurrentAngle(deg) {
 
 function checkAnswer() {
     setCurrentAngle(angle);
+    var speech;
     if (currentAngle === board[currentPeg]) {
         images[currentPeg].setAttribute("src", "green.png");
         currentPeg += 1;
         var randAngle = getRandomInt(0, 360);
+        target.style.transition="all 0.3s";
         target.style.transform = "rotate(" + randAngle + "deg)";
+        
+
         angle = randAngle;
         if (currentPeg <= 24) {
             images[currentPeg].setAttribute("src", "yellow.png");
@@ -86,10 +90,23 @@ function checkAnswer() {
             inGame = false;
             clearInterval(interval);
             document.getElementById("time").innerHTML = "Complete!";
+
+        var perc = Number((((currentTime/141)-1)*100).toFixed(0));
+        
+        if(perc < 0 ){
+            perc*=-1;
+            speech = "It took you " + currentTime + " seconds to complete the test! You performed "+ perc + "% better than the homeless";
+        } else if(perc === 0) {
+            speech= "It took you " + currentTime + " seconds to complete the test! You performed the same as the homeless.";
+        } else {
+            speech = "It took you " + currentTime + " seconds to complete the test! You performed "+perc+"% worse than the homeless.";
+        }
+         
+
             bootbox.alert({
                 size: "small",
                 title: "Congratulations!",
-                message: "It took you " + currentTime + " seconds to complete the test!",
+                message: speech,
                 callback: function () {
                     location.reload();
                 }
@@ -118,11 +135,13 @@ function checkAnswer() {
 
 
     function start(event) {
+
         if (!inGame) {
             startTimer();
         }
         images[currentPeg].setAttribute("src", "yellow.png");
         event.stopPropagation();
+        target.style.transition="";
 
         var height, left, top, width, x, y, _ref;
         _ref = this.getBoundingClientRect();
@@ -153,6 +172,7 @@ function checkAnswer() {
     }
 
     function move(event) {
+
         var d, x, y;
         event.preventDefault();
         event.stopPropagation();
@@ -177,6 +197,7 @@ function checkAnswer() {
     }
 
     function finish() {
+        
         angle = angle + rotation;
         if (angle >= 360) {
             angle -= 360;

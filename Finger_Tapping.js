@@ -32,10 +32,22 @@ function updateTimer() {
     if ((timeRemaining - (elapsedTime / 1000)).toFixed(2) < 0) {
         inGame = false;
         clearInterval(timer);
+        var perc = Number((((counter/34)-1)*100).toFixed(0));
+        var speech;
+        if(perc < 0 ){
+            perc*=-1;
+            speech = "You tapped: " + counter + " times! You performed "+perc+"% worse than the homeless.";
+        } else if(perc === 0) {
+            speech="You tapped: " + counter + " times! You performed the same as the homeless.";
+        } else {
+            speech = "You tapped: " + counter + " times! You performed "+perc+"% better than the homeless.";
+        }
+         
+        
         bootbox.alert({
             size: "small",
             title: "Score",
-            message: "You tapped: " + counter + " times!",
+            message: speech,
             callback: function () {
                 reset();
             }
