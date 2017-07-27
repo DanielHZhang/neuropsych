@@ -95,7 +95,7 @@ function checkAnswer() {
         
         if(perc < 0 ){
             perc*=-1;
-            speech = "It took you " + currentTime + " seconds to complete the test! You performed "+ perc + "% better than the homeless";
+            speech = "It took you " + currentTime + " seconds to complete the test! You performed "+ perc + "% better than the homeless.";
         } else if(perc === 0) {
             speech= "It took you " + currentTime + " seconds to complete the test! You performed the same as the homeless.";
         } else {
